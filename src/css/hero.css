@@ -1,0 +1,134 @@
+.hero {
+    position: relative;
+    min-height: 95vh;
+    background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 60%),
+        url('https://www.serperuano.com/wp-content/uploads/2019/06/productoskaita.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 30px 100px 30px;
+    z-index: 10;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 45px; 
+    position: relative;
+    display: inline-block;
+}
+
+.hero-content h1::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    opacity: 0.9;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+/* PASO 1: Agregamos la transición a los botones originales */
+.btn-primary {
+    background-color: white;
+    color: #1a6e4f;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block; /* Asegura que el movimiento funcione */
+    transition: all 0.3s ease; /* PASO 1: Suaviza la animación */
+}
+
+.btn-secondary {
+    border: 2px solid white;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block; /* Asegura que el movimiento funcione */
+    transition: all 0.3s ease; /* PASO 1: Suaviza la animación */
+}
+
+/* PASO 2: Definimos el movimiento al pasar el mouse (HOVER) */
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-5px); /* Mueve el botón 5px arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Agrega sombra de profundidad */
+}
+
+/* PASO 3: Definimos el efecto de presionado (ACTIVE) */
+.btn-primary:active, .btn-secondary:active {
+    transform: translateY(-2px); /* Baja un poquito al hacer clic */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.hero-wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 5;
+}
+
+.hero-wave svg {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 140px;
+    }
+    
+    .hero-content h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero-image { display: none; }
+    .hero-btns { justify-content: center; }
+}
