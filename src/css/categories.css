@@ -1,0 +1,120 @@
+.categories {
+    padding-top: 50px;    /* Esto crea el espacio de "aire" debajo de la curva */
+    padding-bottom: 80px;
+    background-color: hsla(0, 0%, 100%, 0.534);
+    width: 100%;
+}
+
+.categories-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 0 30px;
+    
+    /* ELIMINAMOS EL MARGEN NEGATIVO Y PONEMOS UNO POSITIVO */
+    margin-top: 20px;     /* Esto las empuja hacia abajo, lejos de la imagen */
+    
+    position: relative;
+    z-index: 20;
+}
+
+.category-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Sombra más sutil como en el prototipo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    transition: all 0.4s ease;
+    cursor: pointer;
+    border: 1px solid #f0f0f0; /* Un borde muy fino para dar elegancia */
+}
+
+.card-image {
+    width: 100%;
+    height: 200px; /* Un poco más altas para que luzca la foto */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card-info {
+    padding: 20px 10px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    color: #14533d;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Efecto hover suave */
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+.featured-divider {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    /* Mantenemos la altura que ya te gustó */
+    margin: -35px 0 40px 0; 
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+/* La línea del acabado notable */
+.divider-line {
+    width: 100vw;
+    height: 1.5px; /* Un poco más delgada para mayor elegancia */
+    background-color: #e0e0e0; /* Gris suave */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* EL CAMBIO PRINCIPAL: Fuente más pequeña y presentable */
+.featured-title {
+    position: relative;
+    z-index: 2;
+    background-color: #ffffff;
+    padding: 0 25px;
+    
+    /* Nueva apariencia */
+    color: #1a4d3c; /* Verde bosque profundo */
+    font-size: 1.3rem; /* Tamaño reducido para mayor sutileza */
+    font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Fuente más limpia */
+    font-weight: 500; /* No tan gruesa, más equilibrada */
+    text-transform: uppercase; /* En mayúsculas suele verse más presentable en divisores */
+    letter-spacing: 2px; /* Espaciado entre letras para un look de marca premium */
+    margin: 0;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .featured-title {
+        font-size: 1.1rem;
+        letter-spacing: 1.5px;
+        padding: 0 15px;
+    }
+}

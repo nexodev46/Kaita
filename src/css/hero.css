@@ -3,13 +3,13 @@
     min-height: 95vh;
     background-image: 
         linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.3) 60%),
-        url('https://www.serperuano.com/wp-content/uploads/2019/06/productoskaita.jpg');
+        url('https://villalvafrutas.com.br/wp-content/uploads/2018/04/6.515188841.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     overflow: hidden;
-    color: white;
+    color: rgb(236, 242, 236);
 }
 
 .hero-container {
@@ -43,7 +43,7 @@
     left: 0;
     width: 80px;
     height: 5px;
-    background-color: #ffffff;
+    background-color: #efe7e7;
     border-radius: 10px;
 }
 
@@ -131,4 +131,526 @@
 
     .hero-image { display: none; }
     .hero-btns { justify-content: center; }
+}
+
+
+
+
+
+
+
+
+/* Contenedor principal: Fondo blanco para destacar productos */
+.destacados-section {
+    background-color: #ffffff;
+    padding: 20px 0 80px 0;
+    width: 100%;
+}
+
+/* La rejilla: Aquí es donde se ponen en orden de 4 */
+.productos-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* Crea 4 columnas iguales en laptop */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding: 0 30px;
+}
+
+/* La Tarjeta Cuadrada */
+.producto-card {
+    background: hsla(148, 30%, 88%, 0.656);
+    border: 1px solid hsla(153, 81%, 52%, 0.458); /* Borde sutil del prototipo */
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Caja de la imagen para que todas midan lo mismo */
+.producto-img {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.producto-img img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain; /* Evita que la imagen se estire */
+}
+
+.producto-info h4 {
+    font-size: 1rem;
+    color: #333;
+    margin: 10px 0;
+    height: 40px; /* Alinea los títulos */
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a4d3c;
+    margin-bottom: 15px;
+}
+
+/* Botón Verde idéntico al prototipo */
+.btn-agregar {
+    background-color: #1a6e4f;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Adaptabilidad para Móvil (2 columnas) */
+@media (max-width: 768px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px;
+        gap: 10px;
+    }
+    
+    .producto-card { padding: 10px; }
+}
+
+
+
+
+
+
+
+/* =========================================
+   ESTILOS DE PAGOS Y BENEFICIOS
+   ========================================= */
+
+/* Contenedor de logos de pago */
+.payment-methods {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.payment-line {
+    flex: 1;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.payment-logos {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.pay-logo {
+    height: 30px; /* Tamaño controlado para que se vea fino */
+    filter: grayscale(20%); /* Un toque sutil para que no brillen más que los productos */
+    transition: filter 0.3s;
+}
+
+.pay-logo:hover {
+    filter: grayscale(0%);
+}
+
+/* Barra de beneficios (La franja verde inferior) */
+.benefits-bar {
+    background-color: #f9fbf9; /* Un verde-blanco muy suave del prototipo */
+    border-top: 1px solid #eef2ee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 30px;
+    margin-top: 50px;
+    flex-wrap: wrap; /* Para que en móvil se pongan uno debajo de otro */
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1a4d3c;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.benefit-item i {
+    font-size: 1.4rem; /* Iconos verdes llamativos */
+    color: #1a6e4f;
+}
+
+.benefit-divider {
+    width: 1px;
+    height: 30px;
+    background-color: #d1d9d1;
+}
+
+/* RESPONSIVE: Adaptable para móvil */
+@media (max-width: 768px) {
+    .payment-methods {
+        gap: 15px;
+    }
+    
+    .benefits-bar {
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .benefit-divider {
+        display: none; /* Quitamos las líneas verticales en móvil */
+    }
+}
+
+
+
+
+.benefits-bar {
+    background-color: #f9fbf9; /* Fondo muy claro, casi blanco */
+    border-top: 1px solid #eef2ee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* Espacio entre los beneficios */
+    padding: 30px 20px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre icono y texto */
+    color: #1a4d3c; /* Verde oscuro del texto */
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ESTILO DE LOS ICONOS */
+.benefit-item i {
+    color: #1a6e4f; /* Verde brillante corporativo */
+    font-size: 1.5rem; /* Tamaño destacado */
+}
+
+.benefit-divider {
+    width: 1px;
+    height: 35px;
+    background-color: #d1d9d1; /* Línea divisoria gris/verde suave */
+}
+
+/* RESPONSIVE: Adaptable para Móvil */
+@media (max-width: 768px) {
+    .benefits-bar {
+        flex-direction: column; /* Se ponen uno debajo de otro */
+        align-items: flex-start; /* Alineados a la izquierda en móvil */
+        gap: 25px;
+        padding-left: 40px;
+    }
+    
+    .benefit-divider {
+        display: none; /* Quitamos las líneas en móvil */
+    }
+}
+
+
+
+
+.benefits-bar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px 10px;
+    background-color: #fcfdfc;
+    border-top: 1px solid #eef2ee;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #1a4d3c;
+}
+
+.benefit-item i {
+    color: #1a6e4f; /* Verde corporativo */
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   SECCIÓN: POR QUÉ ELEGIRNOS
+   ========================================= */
+.why-us {
+    background-color: #ffffff;
+    padding: 80px 0;
+    width: 100%;
+}
+
+.why-us-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 30px;
+}
+
+/* Contenido de texto */
+.why-us-content {
+    flex: 1;
+}
+
+.section-title-wrapper {
+    margin-bottom: 25px;
+}
+
+.why-title {
+    font-size: 2rem;
+    color: #1a4d3c;
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.title-underline {
+    width: 80%;
+    height: 1px;
+    background-color: #e0e0e0;
+}
+
+.why-description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Caja de la Cita (Look Prototipo) */
+.quote-box {
+    background-color: #f9fbf9;
+    border-radius: 10px;
+    padding: 20px 25px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    border-left: 4px solid hwb(158 4% 60% / 0.848);
+}
+
+.quote-icon {
+    color: #1a6e4f;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.quote-text {
+    font-style: italic;
+    color: #1a4d3c;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Imagen del equipo */
+.why-us-image {
+    flex: 1;
+}
+
+.why-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+/* =========================================
+   ADAPTABILIDAD (MÓVIL)
+   ========================================= */
+@media (max-width: 992px) {
+    .why-us-container {
+        flex-direction: column; /* Se pone uno debajo de otro en móvil */
+        text-align: center;
+        gap: 40px;
+    }
+
+    .title-underline {
+        margin: 0 auto;
+    }
+
+    .quote-box {
+        text-align: left;
+    }
+}
+
+
+
+
+/* =========================================
+   SECCIÓN BLOG DE SALUD
+   ========================================= */
+.blog-section {
+    background-color: #ffffff;
+    padding: 60px 0;
+}
+
+.blog-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.blog-card {
+    background: #fff;
+    border: 1px solid #f1f1f1;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.blog-image-container {
+    width: 100%;
+    height: 180px;
+    background-color: #f8f9fa; /* Fondo gris claro mientras cargan las fotos */
+}
+
+.blog-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-body {
+    padding: 25px 20px;
+}
+
+.blog-body h4 {
+    color: #1a4d3c;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    height: 45px; /* Para que todos los títulos ocupen lo mismo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón idéntico al prototipo */
+.btn-blog {
+    background-color: #1a6e4f;
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-blog:hover {
+    background-color: #14533d;
+}
+
+/* Responsive para celular */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+
+
+.main-footer {
+    background-color: #1a4d3c; /* Verde oscuro corporativo */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding: 0 30px;
+}
+
+.footer-logo { font-size: 1.8rem; margin-bottom: 20px; }
+.footer-logo span { font-weight: 300; }
+
+.footer-container h4 {
+    color: #b8daba; /* Verde clarito para títulos */
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.footer-links ul { list-style: none; padding: 0; }
+.footer-links ul li { margin-bottom: 10px; }
+.footer-links ul li a { color: #fff; text-decoration: none; opacity: 0.8; transition: 0.3s; }
+.footer-links ul li a:hover { opacity: 1; padding-left: 5px; color: #b8daba; }
+
+.footer-contact p { display: flex; gap: 10px; align-items: center; opacity: 0.8; margin-bottom: 15px; }
+
+.social-links { display: flex; gap: 15px; margin-top: 20px; }
+.social-links a {
+    width: 40px; height: 40px; background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: #fff; transition: 0.3s;
+}
+.social-links a:hover { background: #1a6e4f; transform: translateY(-3px); }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    .footer-contact p { justify-content: center; }
+    .social-links { justify-content: center; }
 }
